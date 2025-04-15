@@ -8,9 +8,10 @@ WORKDIR /app
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
+# Copia el resto del código
 COPY . .
 
-# Expone el puerto (cambia si usas otro)
+# Expone el puerto 8000 (Render lo necesita explícitamente)
 EXPOSE 8000
 
 # Comando para correr la app con Uvicorn
